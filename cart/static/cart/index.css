@@ -1,0 +1,13 @@
+.full-price {
+  color: red;
+  font-size: larger;
+}
+
+form > input {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+form > input.larger-font {
+	font-size: larger;
+}

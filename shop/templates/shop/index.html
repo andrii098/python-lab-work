@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Онлайн магазин</title>
+
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'style.css' %}"/>
+	<link rel="stylesheet" href="{% static 'shop/index.css' %}"/>
+	<script src="{% static 'shop/index.js' %}" defer type="text/javascript"></script>
+</head>
+<body>
+	<div style="text-align: end;" class="nav-bar">
+		<a href="../cart">Корзина</a>	
+	</div>
+	<h1>Товары</h1>
+	<table>
+		<thead>
+			<th>Название</th>
+			<th>Описание</th>
+			<th>Цена, грн</th>			
+			<th>Фото</th>
+			<th></th>
+		</thead>
+		<tbody>
+			{% for item in goods %}
+				<tr>
+					<td>{{item.name}}</td>
+					<td class="text-start">
+						{{item.description}}
+					</td>
+					<td>{{item.price}}</td>
+					<td>
+						<img src="../media/{{item.photo}}" width="200" height="200" />
+					</td>
+					<td>
+						<button id="{{item.id}}" class="add">
+							Добавить <br>
+							в корзину
+						</button>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>

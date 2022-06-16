@@ -1,0 +1,18 @@
+button.add {
+  background-color: lightcoral;
+  font-size: large;
+  padding: 10px;
+}
+
+button.add:hover {
+    background-color: blueviolet;  
+    color: white;
+}
+
+button.add.chosen {
+  background-color: lightblue;
+}
+
+button.add.chosen:hover {
+	color: red;
+}
